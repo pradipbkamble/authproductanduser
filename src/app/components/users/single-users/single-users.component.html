@@ -1,0 +1,21 @@
+
+<mat-card style="background-color: antiquewhite;">
+    <h1 class="p-3 text-center">
+        product details
+    </h1>
+    <mat-card-content class="p-4 text-center">
+       
+      
+    <p>
+        product features :<strong>{{userobj.userName}}</strong>
+    </p>
+    <p>
+        product status : <strong> {{userobj.userRole}}</strong>
+    </p>
+      
+    </mat-card-content>
+    <mat-card-footer class="d-flex justify-content-between m-2">
+        <button mat-raised-button type="button"  (click)="updateuser()" color="primary">Edit</button>
+        <button mat-raised-button type="button" (click)="deleteproject(userobj.userId)" color="warn">Delete</button>
+    </mat-card-footer>
+</mat-card>

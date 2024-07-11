@@ -1,0 +1,23 @@
+
+    <mat-card style="background-color: antiquewhite;">
+        <h1 class="p-3 text-center">
+            product details
+        </h1>
+        <mat-card-content class="p-4 text-center">
+           
+           <p>
+            product name : <strong>{{productobj.pname}}</strong>
+           </p>
+        <p>
+            product features :<strong>{{productobj.feature}}</strong>
+        </p>
+        <p>
+            product status : <strong> {{productobj.pstatus}}</strong>
+        </p>
+          
+        </mat-card-content>
+        <mat-card-footer class="d-flex justify-content-between m-2">
+            <button mat-raised-button type="button"  (click)="updateproduct()" color="primary">Edit</button>
+            <button mat-raised-button type="button" (click)="deleteproject(productobj.pId)" color="warn">Delete</button>
+        </mat-card-footer>
+    </mat-card>

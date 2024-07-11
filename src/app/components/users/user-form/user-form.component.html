@@ -1,0 +1,30 @@
+<mat-card>
+    <h1 class="p-2 text-center">
+        user form
+    </h1>
+   <mat-card-content>
+    <form [formGroup]="formedtinputs" (ngSubmit)="onsubmitform()">
+        <div class="form-group">
+           <label for="userName">userName</label>
+           <input type="text" class="form-control" formControlName="userName">
+        </div>
+        
+         <div class="form-group">
+            <label for="userRole">userRole</label>
+            <select name="userRole" id="userRole" class="form-control" formControlName="userRole">
+                <option value="user">user</option>
+                <option value="Admin">Admin</option>
+                <option value="superAdmin">superAdmin</option>
+            </select>
+         </div>
+         <div class="form-group">
+            <button mat-raised-button type="button" *ngIf="isUpdate" (click)="updateuser()" color="accent">Update</button>
+            <button mat-raised-button type="submit" *ngIf="!isUpdate" color="primary">Submit</button>
+          
+         </div>
+    </form>
+   </mat-card-content> 
+   
+</mat-card>
+
+

@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <mat-card style="background-color: antiquewhite;">
+            <div *ngIf="isloginform">
+
+                <h1 class="bg-info p-2 text-center border border-danger font-weight-bold">
+                    Login form
+                </h1>
+                <mat-card-content>
+                    <form [formGroup]="loginforminputs" (ngSubmit)="onloinsubmit()">
+                        <div class="form-group">
+                            <label for="gmail">gmail</label>
+                            <input type="text" class="form-control" formControlName="gmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input type="text" class="form-control" formControlName="password">
+                        </div>
+                        <div class="text-center">
+                            <button mat-raised-button color="primary">Login</button>
+                        </div>
+
+                    </form>
+                </mat-card-content>
+            </div>
+
+
+            <div *ngIf="!isloginform">
+
+                <h1 class="bg-success p-2 text-center border border-danger font-weight-bold">
+                    Registration form
+                </h1>
+                <mat-card-content>
+                    <form [formGroup]="signupforminputs" (ngSubmit)="onsignups()">
+                        <div class="form-group">
+                            <label for="Fname">Fname</label>
+                            <input type="text" class="form-control" formControlName="Fname" placeholder="ex-john">
+                        </div>
+                        <div class="form-group">
+                            <label for="Lname">Lname</label>
+                            <input type="text" class="form-control" formControlName="Lname" placeholder="ex-stifan">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact">contact</label>
+                            <input type="text" class="form-control" formControlName="contact" placeholder="9730893692">
+                        </div>
+                        <div class="form-group">
+                            <label for="gmail">gmail</label>
+                            <input type="text" class="form-control" formControlName="gmail" placeholder="abc@gmail.com">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label [for]="desig" *ngFor="let desig of ['mail','femail']" class="m-3"> {{desig}}
+                                <input type="radio" [value]="desig" formControlName="status" class="m-1">
+                            </label>
+                        </div> -->
+                        <div class="text-center">
+                            <button mat-raised-button color="warn">Signup</button>
+                        </div>
+
+                    </form>
+
+                </mat-card-content>
+            </div>
+
+            <p>{{isloginform? 'is not registerd yet !!!':'login already !!!'}}
+                <a href="javascript;:" (click)="isloginform=!isloginform" class="btn-link">
+                    {{!isloginform ? 'login' : 'regiter'}}
+                </a>
+            </p>
+            <select>
+                <option>user@gmail.com</option>
+                <option>admin@gmail.com</option>
+                <option>superadmin@gmail.com</option>
+            </select>
+        </mat-card>
+    </div>
+</div>
