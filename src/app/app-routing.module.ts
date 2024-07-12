@@ -34,7 +34,7 @@ component:AuthComponent
     component: ProductsComponent,
     canActivate:[AuthGuard,UserRoleGuard],
     data:{
-      UserRole:['Admin','SuperAdmin']
+      UserRole:['user','Admin','SuperAdmin']
     },
     
     children: [
@@ -69,7 +69,7 @@ productinfo:ProductresolveService
     path: 'users',
     canActivate:[AuthGuard,UserRoleGuard],
     data:{
-      UserRole:['Admin']
+      UserRole:['Admin','SuperAdmin']
     },
     component: UsersComponent,
     children: [

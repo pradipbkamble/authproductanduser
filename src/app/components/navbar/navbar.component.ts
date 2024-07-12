@@ -7,10 +7,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+GetUserRole!:string
   constructor(private _authservice:AuthService) { }
 
   ngOnInit(): void {
+    this.GetUserRole=localStorage.getItem('UserRole')!
   }
   logout(){
    this._authservice.logout() 

@@ -12,7 +12,7 @@
         <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" routerLink="products">products </a>
           </li>
-          <li class="nav-item" routerLinkActive="active">
+          <li class="nav-item" routerLinkActive="active" *ngIf="GetUserRole.includes('Admin') || GetUserRole.includes('SuperAdmin')">
             <a class="nav-link" routerLink="users">users </a>
           </li>
           <li class="nav-item" routerLinkActive="active">
