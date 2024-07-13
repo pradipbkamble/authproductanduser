@@ -1,3 +1,4 @@
+import { Observable } from "rxjs";
 
 
 export interface Iproduct{
@@ -6,4 +7,10 @@ export interface Iproduct{
     feature: string;
     pstatus: "Delivered"|"InProcess"|"Dispatched";
     canraturn: string;
+}
+
+
+
+export interface Candeactivate{
+    canDeactive:()=>boolean|Promise<boolean>|Observable<boolean>
 }

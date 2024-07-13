@@ -14,6 +14,7 @@ import { UserRoleGuard } from './gards/user-role.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductresolveService } from './services/productresolve.service';
 import { UseresolveService } from './services/useresolve.service';
+import { DeactiveGuard } from './gards/deactive.guard';
 
 const routes: Routes = [
   {
@@ -44,18 +45,18 @@ component:AuthComponent
       },
       {
         path: ':productid',
+        component: SingleProductComponent,
         resolve:{
-productinfo:ProductresolveService
-        },
-        component: SingleProductComponent
+          productinfo:ProductresolveService
+                  },
+        
       },
       {
         path: ':productid/edtproduct',
         component: FormProductComponent,
-        canActivate:[AuthGuard,UserRoleGuard],
-        data:{
-          UserRole:['SuperAdmin']
-        },
+        canDeactivate:[
+          DeactiveGuard
+        ]
 
       }
     ]
@@ -86,7 +87,10 @@ productinfo:ProductresolveService
       },
       {
         path: ':userid/useredt',
-        component: UserFormComponent
+        component: UserFormComponent,
+        canDeactivate:[
+          DeactiveGuard
+        ]
 
       }
     ]

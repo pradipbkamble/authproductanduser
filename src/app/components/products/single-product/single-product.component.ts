@@ -12,9 +12,13 @@ export class SingleProductComponent implements OnInit {
   productid!:string
   productobj!:Iproduct
   constructor( private _productservice:ProductService , private _rout:ActivatedRoute, private _router:Router) {
-    this._rout.data.subscribe(res=>{
-      this.productobj=res['productinfo']
-    })
+   this._rout.data
+   .subscribe(res=>{
+    this.productobj=res['productinfo']
+    console.log(this.productobj);
+    
+   })
+  
    }
 
   ngOnInit(): void {

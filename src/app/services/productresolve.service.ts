@@ -11,8 +11,10 @@ export class ProductresolveService implements Resolve<Iproduct> {
 
   constructor(private _productservice:ProductService) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Iproduct> | Promise<Iproduct> | Iproduct {
-   let productobj=route.data['productid']
-   return this._productservice.fetchsingleproduct(productobj)
+  console.log(route.params);
+const productob=route.params['productid']
+   
+   return this._productservice.fetchsingleproduct(productob)
    
   }
 }

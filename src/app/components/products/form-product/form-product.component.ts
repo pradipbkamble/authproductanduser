@@ -53,4 +53,14 @@ this._productservice.fetchupd(updatepro);
 this.formedtinputs.reset()
 this.isUpdate=false
   }
+
+  canDeactive(){
+    if(this.formedtinputs.dirty){
+      return confirm('are you sure to leave the page')
+    }
+    return true
+  }
+
+
+
 }

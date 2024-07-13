@@ -53,5 +53,15 @@ this._userser.updfetch(updatepro)
 this.formedtinputs.reset()
 this.isUpdate=false
   }
+
+  canDeactive(){
+    if(this.formedtinputs.dirty){
+      return alert('are you sure to leave from this form')
+    }
+    return true
+  }
+
+
+
 }
 
